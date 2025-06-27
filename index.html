@@ -3,45 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zed Rhythm Martoo 🎵</title>
+  <title>Zed Rhythms Martoo 🎵 | Your Hub for Zambian Music</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navigation -->
   <header class="navbar">
-    <img src="Zedrhythmsmartoo logo.png" alt="Zed Rhythm Logo" class="logo" />
+    <div class="logo-container">
+      <img src="Zedrhythmsmartoo logo.png" alt="Zed Rhythms Martoo Logo" class="logo" />
+      <h1>Zed Rhythms Martoo</h1> </div>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Music</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#featured">Music</a></li>
         <li><a href="#">Albums</a></li>
         <li><a href="#">Videos</a></li>
         <li><a href="#">Request Song</a></li>
-      </ul>
+        <li><a href="about.html">About Martoo</a></li> </ul>
     </nav>
   </header>
 
-  <!-- Banner -->
   <section class="banner">
-    <img src="Zedrhythmsmartoo banner.png" alt="Zed Rhythm Martoo Banner" />
+    <img src="Zedrhythmsmartoo banner.png" alt="Zed Rhythms Martoo Banner" />
   </section>
 
-  <!-- Featured Music -->
-  <main class="content">
-    <h3>🎧 Featured Track:</h3>
-<p><strong>Ozone Africa Ft. Jemax – Kaya</strong></p>
-
-<a href="https://cdn.jsdelivr.net/gh/MARTOO-TECH-WORKS-01/zed-rhythm-martoo/music/Ozone_Africa_Ft_Jemax_-_Kaya.mp3" 
-   download 
-   style="display: inline-block; padding: 12px 24px; background-color: #1db954; color: white; border-radius: 8px; text-decoration: none; font-weight: bold;">
-   🎵 Download Now – Zed Rhythm Martoo
-</a>
+  <main class="content" id="featured">
+    <h2>🎵 Featured Track:</h2>
+    <div class="featured-track-card">
+      <h3>Ozone Africa Ft. Jemax – Kaya</h3>
+      <div class="audio-player-container">
+        <audio controls class="audio-player">
+          <source src="https://cdn.jsdelivr.net/gh/MARTOO-TECH-WORKS-01/zed-rhythm-martoo/music/Ozone_Africa_Ft_Jemax_-_Kaya.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      
+      <a href="https://cdn.jsdelivr.net/gh/MARTOO-TECH-WORKS-01/zed-rhythm-martoo/music/Ozone_Africa_Ft_Jemax_-_Kaya.mp3" 
+         download 
+         class="download-button">
+         ⬇️ Download Now – Zed Rhythms Martoo
+      </a>
     </div>
+
+    <section class="music-section">
+      <h2>✨ Latest Releases</h2>
+      <div class="music-grid">
+        <div class="music-item">
+          <img src="https://via.placeholder.com/150" alt="Album Art" class="album-art">
+          <h4>Artist Name - Song Title</h4>
+          <p>Genre: Hip-Hop</p>
+          <audio controls class="audio-player-small">
+            <source src="https://via.placeholder.com/1" type="audio/mpeg"> Your browser does not support the audio element.
+          </audio>
+          <a href="#" download class="download-button-small">Download</a>
+        </div>
+        <div class="music-item">
+          <img src="https://via.placeholder.com/150" alt="Album Art" class="album-art">
+          <h4>Another Artist - New Track</h4>
+          <p>Genre: Afrobeat</p>
+          <audio controls class="audio-player-small">
+            <source src="https://via.placeholder.com/1" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <a href="#" download class="download-button-small">Download</a>
+        </div>
+        </div>
+    </section>
+
+    <section class="music-section">
+      <h2>🎤 Artist Spotlights</h2>
+      <div class="artist-grid">
+        <div class="artist-card">
+          <img src="https://via.placeholder.com/100x100" alt="Artist Profile" class="artist-profile-pic">
+          <h4>Artist Name One</h4>
+          <p>Exploring their journey in Zambian music...</p>
+          <a href="#" class="read-more-button">Read More</a>
+        </div>
+        <div class="artist-card">
+          <img src="https://via.placeholder.com/100x100" alt="Artist Profile" class="artist-profile-pic">
+          <h4>Artist Name Two</h4>
+          <p>Their impact on the current soundscape...</p>
+          <a href="#" class="read-more-button">Read More</a>
+        </div>
+        </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Zed Rhythm Martoo. All rights reserved.</p>
+    <p>&copy; 2025 Zed Rhythms Martoo. All rights reserved.</p>
+    <div class="social-links">
+        <a href="#" aria-label="Facebook"><img src="https://via.placeholder.com/30/3b5998/ffffff?text=F" alt="Facebook"></a>
+        <a href="#" aria-label="Instagram"><img src="https://via.placeholder.com/30/C13584/ffffff?text=I" alt="Instagram"></a>
+        <a href="#" aria-label="X (Twitter)"><img src="https://via.placeholder.com/30/000000/ffffff?text=X" alt="X (Twitter)"></a>
+        </div>
   </footer>
 </body>
 </html>
