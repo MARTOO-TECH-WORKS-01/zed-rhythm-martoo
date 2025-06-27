@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zed Rhythm Martoo 🎵</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <img src="Zedrhythmsmartoo logo.png" alt="Zed Rhythm Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Albums</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Request Song</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    <img src="Zedrhythmsmartoo banner.png" alt="Zed Rhythm Martoo Banner" />
+  </section>
+
+  <!-- Featured Music -->
+  <main class="content">
+    <h2>🔥 Latest Drop</h2>
+    <div class="track-card">
+      <h3>Ozone Africa Ft. Jemax – Kaya</h3>
+      <audio controls>
+        <source src="https://zippyshare.day/dZnSgSYa5F6e2Q7/file" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a class="download-btn" href="https://zippyshare.day/dZnSgSYa5F6e2Q7/file" download>
+        🎧 Download MP3
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Zed Rhythm Martoo. All rights reserved.</p>
+  </footer>
+</body>
+</html>
