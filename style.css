@@ -1,94 +1,359 @@
-/* GLOBAL RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Basic Resets & Global Styles */
+:root {
+    --primary-color: #1db954; /* Spotify Green - vibrant */
+    --secondary-color: #ff9800; /* Vibrant Orange - complementary */
+    --dark-bg: #121212; /* Dark background, common for music sites */
+    --light-text: #e0e0e0;
+    --dark-text: #333;
+    --card-bg: #1e1e1e;
+    --footer-bg: #0d0d0d;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f5f5;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    scroll-behavior: smooth;
 }
 
-/* NAVIGATION */
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--light-text);
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+/* Navbar */
 .navbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #111;
-  padding: 10px 5%;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-bg);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo {
-  height: 45px;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.navbar .logo {
+    height: 50px; /* Adjust as needed */
+    width: auto;
+    border-radius: 50%; /* If your logo is circular */
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+.navbar h1 {
+    font-size: 1.8em;
+    margin: 0;
+    color: var(--primary-color);
+    display: none; /* Hide H1 on nav by default, show on larger screens if desired */
 }
 
-/* BANNER */
+.navbar nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar nav ul li a {
+    color: var(--light-text);
+    font-weight: 700;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.navbar nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+
+/* Banner */
+.banner {
+    width: 100%;
+    overflow: hidden; /* Ensures image doesn't overflow container */
+}
+
 .banner img {
-  width: 100%;
-  height: auto;
-  max-height: 320px;
-  object-fit: cover;
-  display: block;
+    width: 100%; /* Make image fill the width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    max-height: 400px; /* Max height for desktop banners */
 }
 
-/* MAIN CONTENT */
+/* Main Content Area */
 .content {
-  padding: 20px 5%;
-  width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
 }
 
-.track-card {
-  background-color: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-top: 20px;
+.content h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: var(--secondary-color);
 }
 
-.download-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #1db954;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
+/* Featured Track Card */
+.featured-track-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.download-btn:hover {
-  background: #17a94d;
+.featured-track-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8em;
 }
 
-/* FOOTER */
+.audio-player-container {
+    margin: 1.5rem auto;
+    width: 100%;
+    max-width: 600px; /* Limit audio player width */
+}
+
+.audio-player {
+    width: 100%;
+    background-color: var(--dark-bg);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Download Button */
+.download-button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* General Music Section Styling */
+.music-section {
+    margin-bottom: 3rem;
+    padding-top: 1rem; /* For scroll-to effect if linked from nav */
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.music-item, .artist-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.music-item:hover, .artist-card:hover {
+    transform: translateY(-5px);
+}
+
+.album-art, .artist-profile-pic {
+    width: 100%;
+    max-width: 200px; /* Max size for smaller images */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.artist-profile-pic {
+    border-radius: 50%; /* Circular for profiles */
+    max-width: 150px;
+    margin: 0 auto 1rem;
+    border: 3px solid var(--primary-color);
+}
+
+.music-item h4, .artist-card h4 {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.music-item p {
+    font-size: 0.9em;
+    color: var(--light-text);
+    margin-bottom: 1em;
+}
+
+.audio-player-small {
+    width: 90%;
+    margin: 0.5rem auto 1rem;
+    background-color: var(--dark-bg);
+    border-radius: 5px;
+}
+
+.download-button-small {
+    background-color: var(--secondary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.download-button-small:hover {
+    background-color: var(--primary-color);
+}
+
+.read-more-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Footer */
 footer {
-  text-align: center;
-  background: #111;
-  color: white;
-  padding: 20px;
-  margin-top: 50px;
-  width: 100%;
+    background-color: var(--footer-bg);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links img {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px; /* Adjust if you want circular icons */
+    transition: transform 0.2s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .logo-container {
+        margin-bottom: 1rem;
+    }
+
+    .navbar h1 {
+        display: block; /* Show H1 on smaller screens */
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .navbar nav ul li a {
+        font-size: 1.1em;
+    }
+
+    .content {
+        padding: 0 1rem;
+    }
+
+    .featured-track-card, .music-item, .artist-card {
+        padding: 1.5rem;
+    }
+
+    .music-grid, .artist-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+
+    .banner img {
+        max-height: 250px; /* Adjust banner height for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.3em; }
+
+    .navbar .logo {
+        height: 40px;
+    }
+
+    .download-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
 }
