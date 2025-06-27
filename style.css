@@ -1,16 +1,22 @@
+/* GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f5f5f5;
-  width: 100%;
-  overflow-x: hidden;
 }
 
+/* NAVIGATION */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -38,6 +44,7 @@ nav ul li a {
   font-weight: bold;
 }
 
+/* BANNER */
 .banner img {
   width: 100%;
   height: auto;
@@ -46,6 +53,7 @@ nav ul li a {
   display: block;
 }
 
+/* MAIN CONTENT */
 .content {
   padding: 20px 5%;
   width: 100%;
@@ -68,13 +76,14 @@ nav ul li a {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .download-btn:hover {
   background: #17a94d;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   background: #111;
