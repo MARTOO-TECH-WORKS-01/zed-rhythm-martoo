@@ -81,11 +81,11 @@ h3 { font-size: 1.5em; }
     font-size: 1.8em;
     margin: 0;
     color: var(--primary-color);
-    display: none; /* Hide H1 on nav by default, show on larger screens if desired */
+    /* By default, H1 is visible now, will hide on small screens */
 }
 
 .navbar nav ul {
-    display: flex;
+    display: flex; /* **Ensures horizontal layout** */
     gap: 1.5rem;
 }
 
@@ -109,7 +109,6 @@ h3 { font-size: 1.5em; }
     height: 2px;
     background-color: var(--primary-color);
 }
-
 
 /* Banner */
 .banner {
@@ -317,9 +316,11 @@ footer {
     }
 
     .navbar nav ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.8rem;
+        /* Keep horizontal even on smaller screens, allow wrapping if needed */
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 0.8rem 1.2rem; /* Row and column gap */
     }
 
     .navbar nav ul li a {
@@ -356,4 +357,5 @@ footer {
         padding: 10px 20px;
         font-size: 1em;
     }
-}
+    }
+    
