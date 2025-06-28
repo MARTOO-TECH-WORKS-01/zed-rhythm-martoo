@@ -85,7 +85,7 @@ h3 { font-size: 1.5em; }
 }
 
 .navbar nav ul {
-    display: flex; /* **Ensures horizontal layout** */
+    display: flex; /* **Ensures horizontal layout for desktop** */
     gap: 1.5rem;
 }
 
@@ -316,14 +316,21 @@ footer {
     }
 
     .navbar nav ul {
-        /* Keep horizontal even on smaller screens, allow wrapping if needed */
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 0.8rem 1.2rem; /* Row and column gap */
+        /* **Crucial Change for Vertical Mobile Menu** */
+        flex-direction: column; 
+        text-align: center; 
+        gap: 0.8rem; /* Vertical gap between items */
+        width: 100%; /* Make the ul take full width to center list items */
+        padding-top: 1rem; /* Add some space above the menu items */
+    }
+
+    .navbar nav ul li {
+        width: 100%; /* Make each list item take full width */
     }
 
     .navbar nav ul li a {
+        display: block; /* Make links block-level for full-width click area */
+        padding: 0.5rem 0; /* Add vertical padding */
         font-size: 1.1em;
     }
 
@@ -358,4 +365,3 @@ footer {
         font-size: 1em;
     }
     }
-    
