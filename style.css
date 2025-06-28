@@ -81,7 +81,7 @@ h3 { font-size: 1.5em; }
     font-size: 1.8em;
     margin: 0;
     color: var(--primary-color);
-    /* By default, H1 is visible now, will hide on small screens */
+    /* H1 is visible by default for larger screens */
 }
 
 .navbar nav ul {
@@ -309,29 +309,46 @@ footer {
 
     .logo-container {
         margin-bottom: 1rem;
+        flex-direction: column; /* Stack logo and H1 vertically if preferred */
+        text-align: center;
+    }
+
+    .navbar .logo {
+        height: 40px; /* Smaller logo on mobile */
     }
 
     .navbar h1 {
-        display: block; /* Show H1 on smaller screens */
+        font-size: 1.5em; /* Reduced H1 font size on mobile */
+        margin-top: 0.5rem; /* Space between logo and text */
+        text-align: center;
+    }
+
+    .navbar nav {
+        width: 100%; /* Make navigation take full width */
+        margin-top: 1rem; /* Space between logo/title and nav */
     }
 
     .navbar nav ul {
-        /* **Crucial Change for Vertical Mobile Menu** */
-        flex-direction: column; 
-        text-align: center; 
-        gap: 0.8rem; /* Vertical gap between items */
-        width: 100%; /* Make the ul take full width to center list items */
-        padding-top: 1rem; /* Add some space above the menu items */
+        /* **KEY CHANGE: Compact Horizontal/Wrapping Menu** */
+        flex-direction: row; /* Keep items in a row */
+        flex-wrap: wrap;    /* Allow items to wrap to next line if needed */
+        justify-content: center; /* Center items in the row */
+        gap: 0.5rem 1rem; /* Smaller vertical and horizontal gap */
+        padding-top: 0; /* Remove extra padding from previous vertical setup */
     }
 
     .navbar nav ul li {
-        width: 100%; /* Make each list item take full width */
+        width: auto; /* Allow list items to size to content */
     }
 
     .navbar nav ul li a {
-        display: block; /* Make links block-level for full-width click area */
-        padding: 0.5rem 0; /* Add vertical padding */
-        font-size: 1.1em;
+        display: inline-block; /* Ensure links behave like text */
+        padding: 0.3em 0.6em; /* Reduced padding for more compact look */
+        font-size: 0.95em; /* Slightly reduced font size as requested */
+    }
+
+    .banner img {
+        max-height: 250px; /* Adjust banner height for mobile */
     }
 
     .content {
@@ -345,23 +362,21 @@ footer {
     .music-grid, .artist-grid {
         grid-template-columns: 1fr; /* Stack columns on small screens */
     }
-
-    .banner img {
-        max-height: 250px; /* Adjust banner height for mobile */
-    }
 }
 
 @media (max-width: 480px) {
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.8em; }
-    h3 { font-size: 1.3em; }
+    /* Further adjustments for very small phones */
+    h1 { font-size: 1.4em; }
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.2em; }
 
     .navbar .logo {
-        height: 40px;
+        height: 35px;
     }
 
     .download-button {
-        padding: 10px 20px;
-        font-size: 1em;
+        padding: 8px 18px;
+        font-size: 0.9em;
     }
     }
+    
